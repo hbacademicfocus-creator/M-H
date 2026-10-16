@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>October 19, 2026</title>
+<title>October 17, 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -40,7 +40,6 @@ select.field{width:auto;padding:.5rem .7rem;font-size:.85rem}select option{color
 [data-theme=light] .tog{background:linear-gradient(180deg,#e2e8f0,#fff);box-shadow:inset 0 3px 6px rgba(15,23,42,.15),0 4px 12px rgba(15,23,42,.15)}
 [data-theme=light] .tog i{transform:translateX(36px);background:linear-gradient(180deg,#1e293b,#020617);color:#fff}
 [data-theme=dark] .sun{transform:rotate(-90deg) scale(0);opacity:0}[data-theme=light] .moon{transform:rotate(90deg) scale(0);opacity:0}
-/* boot (always dark) */
 #boot{position:fixed;inset:0;z-index:60;background:radial-gradient(circle at 50% 50%,#06142b,#020617 70%);display:grid;place-items:center;perspective:1000px;overflow:hidden;color:#e6f1ff;transition:opacity 1s,transform 1s}
 #boot.off{opacity:0;transform:scale(1.4);pointer-events:none}
 #cal{display:flex;gap:clamp(.5rem,2vw,1.2rem);transform-style:preserve-3d;animation:sway 5s ease-in-out infinite alternate}
@@ -54,7 +53,6 @@ select.field{width:auto;padding:.5rem .7rem;font-size:.85rem}select option{color
 #dedic p{max-width:34rem;font:600 clamp(1.05rem,3.4vw,1.5rem)/1.5 Sora,sans-serif;color:#e0f2fe;text-shadow:0 0 14px #38bdf8,0 0 36px rgba(14,165,233,.7);opacity:0;animation:rise 1.4s forwards}
 @keyframes rise{from{opacity:0;transform:translateY(26px);filter:blur(6px)}to{opacity:1;transform:none;filter:blur(0)}}
 #skip{position:absolute;bottom:18px;right:18px;background:none;border:0;color:#8aa4c8;cursor:pointer;font:500 .85rem 'DM Sans'}
-/* journey */
 #journey{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:1rem;perspective:1100px;opacity:0;visibility:hidden;transition:opacity .8s,transform .9s,visibility 1s}
 #journey.live{opacity:1;visibility:visible}
 #journey.gone{opacity:0;visibility:hidden;transform:scale(1.8);pointer-events:none}
@@ -82,7 +80,6 @@ select.field{width:auto;padding:.5rem .7rem;font-size:.85rem}select option{color
 .heart{border:0;background:none;cursor:pointer;color:#38bdf8;filter:drop-shadow(0 0 16px #0ea5e9)}
 .heart.beat{animation:beat .28s}@keyframes beat{50%{transform:scale(1.28)}}
 .bar{height:8px;border-radius:9px;background:var(--line);overflow:hidden}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--c),var(--a));box-shadow:0 0 14px var(--a);transition:width .2s}
-/* app */
 #app{position:relative;z-index:10;visibility:hidden;min-height:100vh;display:grid;place-items:center;padding:4.5rem 1rem 2rem}
 #app.show{visibility:visible}
 #cols{display:grid;gap:1.2rem;width:min(1040px,100%);perspective:1600px}
@@ -90,7 +87,7 @@ select.field{width:auto;padding:.5rem .7rem;font-size:.85rem}select option{color
 .col{min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.3rem;padding:2rem 1rem;cursor:pointer;color:var(--text);font:inherit;transition:transform .35s,box-shadow .35s}
 .col:nth-child(2){z-index:3}.col:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 30px 70px rgba(14,165,233,.3),var(--shadow)}
 .col h2{font:700 1.35rem/1.25 Sora,sans-serif;text-align:center}
-.emb{width:132px;height:145px;filter:drop-shadow(0 0 18px rgba(56,189,248,.65))}
+.emb{width:132px;height:145px;object-fit:contain;filter:drop-shadow(0 0 18px rgba(56,189,248,.65))}
 #detail{position:fixed;inset:0;z-index:30;display:none;overflow:auto;padding:4rem 1rem 200px;background:var(--veil);backdrop-filter:blur(8px)}
 .track{display:flex;align-items:center;gap:1rem;padding:1rem 1.1rem;cursor:pointer;border-radius:24px;transition:transform .25s,border-color .25s,box-shadow .25s}
 .track:hover{transform:translateY(-4px);border-color:var(--a)}.track.playing{border-color:var(--a);box-shadow:0 0 28px rgba(56,189,248,.4)}
@@ -140,8 +137,6 @@ input[type=range].sl::-moz-range-thumb{width:16px;height:16px;border:0;border-ra
 #gcard.vib{animation:vib .55s;border-color:#ef4444;box-shadow:0 0 44px rgba(239,68,68,.55),var(--shadow)}
 @keyframes vib{0%,100%{transform:translateX(0)}10%{transform:translateX(-12px) rotate(-1deg)}20%{transform:translateX(12px) rotate(1deg)}30%{transform:translateX(-10px)}40%{transform:translateX(10px)}50%{transform:translateX(-7px)}60%{transform:translateX(7px)}70%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
-
-/* ring box + 3D stage */
 #ringgl{position:fixed;inset:0;width:100%;height:100%;z-index:24;pointer-events:none;opacity:0;transition:opacity .7s}
 #ringgl.on{opacity:1}#ringgl.hit{pointer-events:auto;cursor:pointer}
 #rstage{position:relative;height:190px;margin:.2rem 0 .4rem}
@@ -156,7 +151,6 @@ input[type=range].sl::-moz-range-thumb{width:16px;height:16px;border:0;border-ra
 <body>
 <canvas id="bg"></canvas><canvas id="ringgl"></canvas><canvas id="fx"></canvas>
 
-<!-- Sapphire emblem (MH, crowned) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <linearGradient id="gs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7dd3fc"/><stop offset=".5" stop-color="#0ea5e9"/><stop offset="1" stop-color="#4338ca"/></linearGradient>
 <linearGradient id="gc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0f9ff"/><stop offset="1" stop-color="#60a5fa"/></linearGradient>
@@ -177,20 +171,19 @@ input[type=range].sl::-moz-range-thumb{width:16px;height:16px;border:0;border-ra
 
 <button id="snd" class="btn" style="position:fixed;top:14px;left:14px;z-index:70;padding:.45rem .9rem" aria-label="Toggle sound">Sound: on</button>
 
-
 <div id="gate"><section class="glass" id="gcard">
   <div class="ico mx-auto mb-4" style="width:68px;height:68px;border-radius:22px"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
   <h1 class="text-3xl font-bold mb-2">Something is waiting for you</h1>
   <p class="mb-5" style="color:var(--muted)">Type the four digits only we know.</p>
+  
   <input id="code" class="field vault" type="password" inputmode="numeric" maxlength="4" autocomplete="off" aria-label="Passcode">
   <p id="err" class="h-6 mt-2 text-sm" style="color:#f472b6"></p>
   <button id="unlock" class="btn pri w-full">Unlock</button>
 </section></div>
 
-
 <div id="boot">
-  <div id="cal" aria-label="Calendar rolling to October 19, 2026">
-    <div class="reel" id="ry">2026</div><div class="reel" id="rm">OCT</div><div class="reel" id="rd">19</div>
+  <div id="cal" aria-label="Calendar rolling to October 17, 2026">
+    <div class="reel" id="ry">2026</div><div class="reel" id="rm">OCT</div><div class="reel" id="rd">17</div>
   </div>
   <div id="gstage"><div id="gwrap"><div class="gift">
     <div class="gf a"></div><div class="gf b"></div><div class="gf c"></div><div class="gf d"></div>
@@ -204,7 +197,6 @@ input[type=range].sl::-moz-range-thumb{width:16px;height:16px;border:0;border-ra
   <button id="skip">Skip intro</button>
 </div>
 
-
 <div id="journey">
   <section class="glass step active" id="s0"><div class="dots"></div>
     <h2>The First Spark</h2><p class="sub">Where it all began. Press and hold to ignite the memory.</p>
@@ -215,10 +207,10 @@ input[type=range].sl::-moz-range-thumb{width:16px;height:16px;border:0;border-ra
     <h2>The Memory Match</h2><p class="sub">Match the pieces of our special day.</p><div id="mgrid"></div>
   </section>
   <section class="glass step" id="s2"><div class="dots"></div>
-    <h2>The Cultural Harmony</h2><p class="sub">Two festivals, two families, two beautiful traditions. Slide to bring them together.</p>
-    <div id="harm" class="harm"><i class="o1">Eid</i><i class="o2">Avurudu</i></div>
-    <input id="vow" class="vow" type="range" min="0" max="100" value="0" aria-label="Slide to bring the traditions together">
-    <p id="vlab" class="disp mt-4 text-lg" style="color:var(--a)">Two festivals</p>
+    <h2>Two Souls, One Journey</h2><p class="sub">Two paths converging into a single heartbeat. Slide to bring them together.</p>
+    <div id="harm" class="harm"><i class="o1">Hafsa</i><i class="o2">Minhaj</i></div>
+    <input id="vow" class="vow" type="range" min="0" max="100" value="0" aria-label="Slide to bring them together">
+    <p id="vlab" class="disp mt-4 text-lg" style="color:var(--a)">Two hearts</p>
   </section>
   <section class="glass step" id="s3"><div class="dots"></div>
     <h2>The Countdown of Hearts</h2><p class="sub">Tap the heart 14 times in 7 seconds.</p>
@@ -228,23 +220,22 @@ input[type=range].sl::-moz-range-thumb{width:16px;height:16px;border:0;border-ra
   <section class="glass step" id="s4"><div class="dots"></div>
     <h2>The Ultimate Question</h2>
     <div id="rstage"><button id="rhint" class="btn" type="button">Tap the box to open it</button></div>
-    <p id="qtext" class="disp qrow qhid" style="font-size:2rem;font-weight:700;margin:.4rem 0 1.4rem;color:var(--a);text-shadow:0 0 22px rgba(56,189,248,.5)">Will you marry me?</p>
+    <p id="qtext" class="disp qrow qhid" style="font-size:1.6rem;font-weight:700;margin:.4rem 0 1.4rem;color:var(--a);text-shadow:0 0 22px rgba(56,189,248,.5)">Will you preserve our peace and harmony for all time?</p>
     <div id="qbtns" class="flex justify-center items-center gap-4 qrow qhid" style="min-height:60px"><button id="yes" class="btn pri" style="padding:.9rem 2.4rem;font-size:1.05rem">Yes</button><span id="noslot"><button id="no" class="btn" style="padding:.9rem 2rem">No</button></span></div>
     <p id="nomsg" class="h-6 mt-4 text-sm" style="color:var(--muted)"></p>
   </section>
 </div>
 
-
 <div id="app"><div id="cols">
-  <button class="glass shiny col" data-k="audio"><img src="images/custom-logo.png" alt="Emblem" class="emb"><h2>Voice Notes<br>and Recitations</h2></button>
-  <button class="glass shiny col" data-k="video"><img src="images/custom-logo.png" alt="Emblem" class="emb"><h2>Special<br>Memories</h2></button>
-  <button class="glass shiny col" data-k="notes"><img src="images/custom-logo.png" alt="Emblem" class="emb"><h2>Love Notes<br>and Timeline</h2></button>
+  <button class="glass shiny col" data-k="audio"><img class="emb" src="images/custom-logo.png" alt="Logo"><h2>Voice Notes<br>and Recitations</h2></button>
+  <button class="glass shiny col" data-k="video"><img class="emb" src="images/custom-logo.png" alt="Logo"><h2>Special<br>Memories</h2></button>
+  <button class="glass shiny col" data-k="notes"><img class="emb" src="images/custom-logo.png" alt="Logo"><h2>Love Notes<br>and Timeline</h2></button>
 </div></div>
 
 <section id="detail" aria-label="Section content"><div id="panel" class="glass max-w-5xl mx-auto p-5 sm:p-7">
   <div class="flex flex-wrap items-center gap-3 mb-5">
     <button id="back" class="btn">Back</button>
-    <svg width="34" height="37" viewBox="0 0 200 220"><use href="#emb"/></svg>
+    <img src="images/custom-logo.png" alt="Logo" style="width:34px;height:37px;object-fit:contain">
     <h2 id="dtitle" class="text-2xl font-bold flex-1"></h2>
   </div>
   <input id="search" class="field mb-5" type="search" placeholder="Search by title or tag" aria-label="Search this section">
@@ -271,14 +262,13 @@ input[type=range].sl::-moz-range-thumb{width:16px;height:16px;border:0;border-ra
 </footer>
 
 <script>
-
 const DATA = {
   passcode: '2026',
   metCaption: 'Where it all began: the first moment our paths crossed.',
   dedication: [
     'To the one who made every ordinary day feel like a celebration,',
-    'I never imagined that two languages, two homes and two ways of giving thanks',
-    'could fold so gently into one life.',
+    'I never imagined that two hearts and two lives',
+    'could fold so gently into one journey.',
     'You are my calm, my laughter, and my favourite answer to every question.',
     'On this day I choose you, and tomorrow I will choose you again.',
     'This little world is for you.'
@@ -293,25 +283,24 @@ const DATA = {
   video: [
     {title:'Our Story', desc:'How two worlds became one.', tags:['story','us','journey'], file:'vedio/our-story.mp4'},
     {title:'Memories', desc:'The moments we keep close.', tags:['memories','moments','together'], file:'vedio/memories.mp4'},
-    {title:'Two Families, One Table', desc:'Food, laughter and a lot of love.', tags:['family','dinner'], file:'vedio/two-families.mp4'},
-    {title:'Eid and Avurudu Together', desc:'Celebrating both of our festivals.', tags:['eid','avurudu','festival'], file:'vedio/eid-and-avurudu.mp4'},
+    {title:'Two Hearts, One Home', desc:'Food, laughter and a lot of love.', tags:['family','dinner'], file:'vedio/two-families.mp4'},
+    {title:'Celebrations Together', desc:'Celebrating our joy side by side.', tags:['festival','together'], file:'vedio/eid-and-avurudu.mp4'},
     {title:'Our Next Chapter', desc:'Everything still to come.', tags:['future','wedding','hope'], file:'vedio/next-chapter.mp4'}
   ],
   timeline: [
     {when:'The day we met', title:'The first spark', text:'A small hello that quietly changed everything.', tags:['first','meeting','spark']},
-    {when:'The early days', title:'Learning each other', text:'Long talks, new foods, and two sets of traditions learned with curiosity.', tags:['culture','talks','food']},
+    {when:'The early days', title:'Learning each other', text:'Long talks, shared smiles, and beautiful moments learned with curiosity.', tags:['talks','food']},
     {when:'A turning point', title:'Knowing it was you', text:'The moment I stopped imagining a future without you in it.', tags:['love','future']},
-    {when:'Two families', title:'Two tables, one family', text:'Our families met and found room for each other.', tags:['family','together']},
-    {when:'October 19, 2026', title:'Our day', text:'The day we promise to build a home together.', tags:['wedding','promise','milestone']}
+    {when:'Our families', title:'Two families, one heart', text:'Our families met and found complete warmth together.', tags:['family','together']},
+    {when:'October 17, 2026', title:'Our day', text:'The day we promise to build a life together.', tags:['wedding','promise','milestone']}
   ],
   notes: [
     {title:'For the hard days', text:'When the world feels loud, come home to me. I will be the quiet.', tags:['comfort','home']},
     {title:'For the good days', text:'Your laugh is my favourite sound. Let us make more of it.', tags:['joy','laughter']},
-    {title:'For every festival', text:'Your lights and my lanterns, side by side, and the table always full.', tags:['festival','family']},
+    {title:'For every moment', text:'Side by side, hand in hand, always.', tags:['family','together']},
     {title:'For always', text:'I do not need a perfect life. I only need it to be ours.', tags:['forever','promise']}
   ]
 };
-
 
 const $ = (s,r=document) => r.querySelector(s), $$ = (s,r=document) => [...r.querySelectorAll(s)];
 const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
@@ -322,7 +311,6 @@ const still = matchMedia('(prefers-reduced-motion:reduce)').matches;
 const root = document.documentElement;
 root.dataset.theme = store.get('theme') || 'dark';
 $('#theme').onclick = () => { root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'; store.set('theme', root.dataset.theme); };
-
 
 (() => {
   const cv = $('#bg'), cx = cv.getContext('2d'); let W, H, P = [], t = 0;
@@ -341,7 +329,6 @@ $('#theme').onclick = () => { root.dataset.theme = root.dataset.theme === 'dark'
   }
   addEventListener('resize', size); size(); frame();
 })();
-
 
 const FX = (() => {
   const cv = $('#fx'), cx = cv.getContext('2d'); let P = [], run = false;
@@ -364,9 +351,16 @@ const FX = (() => {
   };
 })();
 
-
 const Snd = (() => {
-  let ctx, master, rev, nb, on = true, tc = 0;
+  let ctx, master, rev, nb, on = true, tc = 0, bgAudio = null, bgTimer = null, bgLevel = 0, bgTarget = 0, bgStarted = false;
+  const BG_VOLUME = 0.42;
+  function ensureBg(){ if (!bgAudio){ bgAudio = new Audio('audio/bg.mp3'); bgAudio.loop = true; bgAudio.preload = 'auto'; bgAudio.volume = 0; } return bgAudio; }
+  function fadeBg(target, duration=900, pauseAtEnd=false){ if (!on) target=0; const a=ensureBg(); clearInterval(bgTimer); bgTarget=target; const from=a.volume, start=performance.now(); if (target>0) a.play().catch(()=>{}); bgTimer=setInterval(()=>{ const k=Math.min(1,(performance.now()-start)/duration); a.volume=Math.max(0,Math.min(1,from+(target-from)*k)); bgLevel=a.volume; if(k>=1){clearInterval(bgTimer);bgTimer=null;if(pauseAtEnd&&target===0)a.pause();}},25); }
+  function startBg(){ bgStarted=true; const a=ensureBg(); if(on){a.play().catch(()=>{});fadeBg(BG_VOLUME,2400);} }
+  function duckBg(){ if(bgStarted && bgAudio && !bgAudio.paused) fadeBg(BG_VOLUME*.28,180, false); }
+  function restoreBg(){ if($('#detail')?.style.display === 'block') return; if(bgStarted && bgAudio && !bgAudio.paused) fadeBg(BG_VOLUME,650,false); }
+  function leaveForCard(){ if(bgAudio) fadeBg(0,650,true); }
+  function returnToMenu(){ if(bgStarted && on){const a=ensureBg();a.play().catch(()=>{});fadeBg(BG_VOLUME,1300,false);} }
   function init(){ try { if (!ctx){ ctx = new (window.AudioContext||window.webkitAudioContext)();
       const comp = ctx.createDynamicsCompressor(); comp.threshold.value = -14; comp.ratio.value = 4; comp.connect(ctx.destination);
       master = ctx.createGain(); master.gain.value = on ? .7 : 0; master.connect(comp);
@@ -374,7 +368,9 @@ const Snd = (() => {
       for (let c=0;c<2;c++){ const d = ir.getChannelData(c); for (let i=0;i<len;i++) d[i] = (Math.random()*2-1)*Math.pow(1-i/len,3.2); }
       const cv = ctx.createConvolver(), wet = ctx.createGain(); cv.buffer = ir; wet.gain.value = .8; rev = ctx.createGain(); rev.connect(cv); cv.connect(wet); wet.connect(master);
       nb = ctx.createBuffer(1, ctx.sampleRate*2, ctx.sampleRate); const n = nb.getChannelData(0); for (let i=0;i<n.length;i++) n[i] = Math.random()*2-1; }
-    if (ctx.state === 'suspended') ctx.resume(); } catch(e) {} }
+    if (ctx.state === 'suspended') ctx.resume(); 
+    ensureBg();
+  } catch(e) {} }
   const ok = () => ctx && on;
   let dfile = null; try { dfile = new Audio('audio/access-denied.mp3'); dfile.preload = 'auto'; dfile.addEventListener('canplaythrough', () => { dfile.ok = true; }, {once:true}); } catch(e) {}
   const denied = () => { [0,.17].forEach(t => { tone(740,.12,.2,{type:'square',t,a:.002}); tone(370,.12,.12,{type:'sawtooth',t,a:.002}); }); noise(.05,.1,3200,{type:'highpass',a:.001}); };
@@ -388,37 +384,27 @@ const Snd = (() => {
     g.gain.setValueAtTime(.0001,s); g.gain.linearRampToValueAtTime(v,s+a); g.gain.exponentialRampToValueAtTime(.0001,s+d);
     src.connect(fl); fl.connect(g); out(g,o.rv); src.start(s, Math.random()); src.stop(s+d+.05); }
   return { init,
-
+    startBg, duckBg, restoreBg, leaveForCard, returnToMenu,
+    stopBg() { leaveForCard(); },
     tick(){ if (++tc % 2) return; noise(.012,.07,4200,{type:'highpass',q:.7}); tone(1800+rnd(400),.02,.012); },
-
     lock(){ tone(68,.9,.55,{to:42,a:.01,rv:.2}); noise(.2,.12,900,{type:'lowpass',rv:.2}); tone(1046.5,1.4,.07,{a:.01,rv:.6}); tone(1568,1.8,.04,{a:.01,t:.04,rv:.6}); },
-
     pop(){ noise(.7,.2,500,{to:3000,q:.8,a:.15,rv:.4}); tone(392,.9,.06,{a:.12,rv:.5}); },
-
     beep(n){ tone(200+Math.min(n,14)*10,.25,.2,{to:90,rv:.25}); noise(.02,.05,3000,{type:'highpass'}); },
-
     chime(){ [523.25,659.25,783.99].forEach((f,i) => tone(f,2,.07,{t:i*.13,a:.06,rv:.7})); tone(261.63,2.2,.06,{a:.1,rv:.6}); },
-
     charge(d){ noise(d,.38,250,{to:7000,q:.9,a:d*.95,rv:.3}); tone(40,d,.5,{to:120,a:d*.9}); tone(220,d,.1,{to:1760,type:'triangle',a:d*.9,rv:.4}); },
-
     boom(){ tone(90,2.2,.9,{to:26,a:.004,rv:.35}); noise(2.2,.8,6000,{type:'lowpass',to:90,a:.003,rv:.5}); noise(.25,.5,5000,{type:'highpass',a:.001});
       const k = .2; tone(3150,4.2,.12,{to:3020,a:.004,t:k,rv:.55}); tone(3150*2.01,3,.04,{a:.004,t:k,rv:.5}); tone(4720,2.4,.03,{a:.004,t:k,rv:.5}); tone(1580,3.6,.04,{a:.004,t:k,rv:.5});
       [261.63,392,523.25,783.99].forEach((f,i) => tone(f,3.8,.06,{t:1.4+i*.1,a:.9,rv:.8})); },
-
     error(){ if (!on) return; if (dfile && dfile.ok){ const a = dfile.cloneNode(); a.volume = .85; a.play().catch(denied); return; } denied(); },
     latch(){ noise(.05,.28,2400,{q:3,a:.001}); tone(540,.14,.09,{to:320,a:.002,rv:.2}); tone(90,.3,.25,{to:60,a:.004}); },
     shimmer(){ [1318.5,1568,1975.5,2637].forEach((f,i) => tone(f,1.5,.045,{t:i*.09,a:.01,rv:.75})); },
     swoosh(d){ noise(d,.14,260,{to:2800,q:.7,a:d*.45,rv:.35}); tone(330,d,.04,{to:880,a:d*.5,rv:.5}); },
     slide(){ noise(1.8,.09,1800,{to:700,q:1.2,a:.5,rv:.3}); tone(1760,1.8,.025,{to:1320,a:.4,rv:.6}); },
-
     granted(){ tone(587.33,1,.11,{a:.01,rv:.6}); tone(880,1.4,.11,{a:.01,t:.13,rv:.6}); tone(1174.66,1.6,.05,{a:.01,t:.13,rv:.6}); },
-
     reward(){ [523.25,659.25,783.99,1046.5].forEach((f,i) => tone(f,1.5,.1,{t:i*.09,a:.01,rv:.6})); tone(2093,1.8,.035,{t:.3,a:.01,rv:.7}); tone(65.4,.8,.3,{to:48,a:.01}); },
-
     popper(){ noise(.09,.5,2500,{q:.7,a:.001}); tone(190,.14,.45,{to:60,a:.001}); for (let i=0;i<7;i++) tone(3000+rnd(3200),.18,.03,{t:.04+i*.035,type:'triangle',rv:.5}); },
-    toggle(){ on = !on; if (master) master.gain.value = on ? .7 : 0; return on; } };
+    toggle(){ on = !on; if (master) master.gain.value = on ? .7 : 0; if (!on) { if(bgAudio) fadeBg(0,250,true); } else if(bgStarted) { ensureBg().play().catch(()=>{}); fadeBg(BG_VOLUME,900,false); } return on; } };
 })();
-
 
 const Boot = (() => {
   const MON = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
@@ -436,9 +422,8 @@ const Boot = (() => {
         if (!R.m.dataset.l){ R.m.textContent = MON[rnd(12)]; tick(R.m); }
         if (!R.d.dataset.l){ R.d.textContent = String(1+rnd(31)).padStart(2,'0'); tick(R.d); }
         Snd.tick(); }, 70);
-      await w(2200); lock(R.y,'2026'); await w(850); lock(R.m,'OCT'); await w(850); lock(R.d,'19'); clearInterval(iv);
+      await w(2200); lock(R.y,'2026'); await w(850); lock(R.m,'OCT'); await w(850); lock(R.d,'17'); clearInterval(iv);
       await w(1100); $('#cal').classList.add('gone'); await w(500);
-
       const gs = $('#gstage'), gw = $('#gwrap'); gs.style.display = 'grid';
       gw.animate([{transform:'scale(0) translateY(60px)'},{transform:'scale(1.15)',offset:.7},{transform:'scale(1)'}],{duration:800,easing:'ease-out'}); Snd.pop(); await w(850);
       const t0 = performance.now(), dur = 3200; Snd.charge(dur/1000);
@@ -446,8 +431,7 @@ const Boot = (() => {
         gw.style.transform = `translate(${(Math.random()-.5)*a}px,${(Math.random()-.5)*a}px) scale(${p+k*.15})`; gs.style.filter = `drop-shadow(0 0 ${10+k*70}px #38bdf8)`;
         k < 1 ? requestAnimationFrame(f) : res(); })(t0); });
       if (dead) return;
-
-      Snd.boom(); FX.blast(); gs.style.filter = 'none';
+      Snd.boom(); FX.blast(); setTimeout(() => Snd.startBg(), 520); gs.style.filter = 'none';
       $('#flash').animate([{opacity:0},{opacity:1,offset:.15},{opacity:0}],{duration:1500,easing:'ease-out'});
       $('.lid').animate([{transform:'translateY(0) rotateZ(0)',opacity:1},{transform:'translateY(-420px) rotateZ(50deg)',opacity:0}],{duration:700,easing:'ease-out',fill:'forwards'});
       gw.animate([{opacity:1,transform:'scale(1.2)'},{opacity:0,transform:'scale(2.6)'}],{duration:600,fill:'forwards'});
@@ -459,13 +443,11 @@ const Boot = (() => {
   return { start };
 })();
 
-
 const Journey = (() => {
   let cur = 0; const N = 5;
   $$('.dots').forEach(d => { const i = +d.closest('.step').id.slice(1); d.innerHTML = Array.from({length:N},(_,k) => `<b class="${k<=i?'on':''}"></b>`).join(''); });
   function go(n){ const a = $('#s'+cur), b = $('#s'+n); a.classList.remove('active'); a.classList.add('out'); Snd.chime();
     setTimeout(() => { b.classList.remove('out'); b.classList.add('active'); }, 250); cur = n; if (n === 4) setTimeout(() => Ring.begin(), 1100); }
-
   const sp = $('#spark'); let holding = false, sDone = false, raf = 0, t0 = 0;
   function sStep(ts){ if (!holding) return; const p = Math.min((ts-t0)/1500*100,100); sp.style.setProperty('--p',p);
     if (p >= 100){ holding = false; sDone = true; const r = sp.getBoundingClientRect(); FX.small(r.left+r.width/2, r.top+r.height/2); Snd.pop();
@@ -476,7 +458,7 @@ const Journey = (() => {
   sp.addEventListener('keydown', e => { if ((e.key==='Enter'||e.key===' ') && !e.repeat){ e.preventDefault(); down(); } });
   sp.addEventListener('keyup', up);
 
-  const pcs = ['OCT','19','2026','∞']; const deck = [...pcs,...pcs].sort(() => Math.random()-.5); let first = null, busy = false, pairs = 0;
+  const pcs = ['OCT','17','2026','∞']; const deck = [...pcs,...pcs].sort(() => Math.random()-.5); let first = null, busy = false, pairs = 0;
   $('#mgrid').innerHTML = deck.map(v => `<button class="mc" data-v="${v}" aria-label="Card"><span class="in"><span class="fr"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l2.6 7.4L22 9l-6 4.6L18 21l-6-4.3L6 21l2-7.4L2 9l7.4-.6z"/></svg></span><span class="bk">${v}</span></span></button>`).join('');
   $('#mgrid').addEventListener('click', e => { const c = e.target.closest('.mc'); if (!c || busy || c.classList.contains('up')) return; c.classList.add('up'); Snd.beep(2);
     if (!first){ first = c; return; } busy = true;
@@ -484,7 +466,7 @@ const Journey = (() => {
     else setTimeout(() => { first.classList.remove('up'); c.classList.remove('up'); first = null; busy = false; }, 750); });
 
   const vow = $('#vow'), harm = $('#harm'); let vDone = false;
-  const lab = n => { harm.style.setProperty('--k', n/100); harm.classList.toggle('m', n >= 60); $('#vlab').textContent = n >= 98 ? 'One celebration' : n > 45 ? 'Coming together' : 'Two festivals'; };
+  const lab = n => { harm.style.setProperty('--k', n/100); harm.classList.toggle('m', n >= 60); $('#vlab').textContent = n >= 98 ? 'One heartbeat' : n > 45 ? 'Coming together' : 'Two hearts'; };
   vow.addEventListener('input', () => { const n = +vow.value; vow.style.setProperty('--v',n); lab(n);
     if (n >= 98 && !vDone){ vDone = true; vow.value = 100; vow.style.setProperty('--v',100); vow.disabled = true; lab(100); Snd.pop(); FX.small(innerWidth/2, innerHeight/2); setTimeout(() => go(3), 900); } });
   vow.addEventListener('change', () => { if (vDone) return; const id = setInterval(() => { const n = Math.max(0,+vow.value-4); vow.value = n; vow.style.setProperty('--v',n); lab(n); if (n <= 0) clearInterval(id); }, 16); });
@@ -510,7 +492,7 @@ const Journey = (() => {
   no.addEventListener('click', e => e.preventDefault());
   no.addEventListener('focus', () => { if (!Ring.ready) return; const r = no.getBoundingClientRect(); dodge(r.left+r.width/2, r.top+r.height/2); no.blur(); });
   $('#yes').onclick = async () => { const y = $('#yes'); if (y.disabled) return; y.disabled = true; $('#no').style.pointerEvents = 'none'; try { await Ring.wear(); } catch(e) {} reveal(); };
-  /* reveal: centre card first, side cards emerge from behind it */
+
   function reveal(){
     $('#journey').classList.add('gone'); $('#app').classList.add('show');
     const c = $$('.col'), m = c[1].getBoundingClientRect(), ease = 'cubic-bezier(.2,1.1,.3,1)';
@@ -521,22 +503,20 @@ const Journey = (() => {
   return { go, start(){ $('#journey').classList.add('live'); } };
 })();
 
-
 const Ring = (() => {
   const T = window.THREE, cv = $('#ringgl'), stage = $('#rstage'), hint = $('#rhint'), api = {ready:false};
   const sleep = ms => new Promise(r => setTimeout(r, ms));
   const showQ = () => { $('#qtext').classList.remove('qhid'); $('#qbtns').classList.remove('qhid'); api.ready = true; };
-  const plain = () => { stage.style.display = 'none'; showQ(); };               /* no WebGL: skip the 3D, keep the flow */
+  const plain = () => { stage.style.display = 'none'; showQ(); };
   api.begin = plain; api.wear = () => Promise.resolve();
   if (!T) return api;
 
   let R, scene, cam, W = 1, H = 1, live = false, state = 'idle', last = 0, spin = 0, hoverTilt = .14, glintAmt = 0, glowAmt = 0;
   let box, ring, hand, glow, boxK = 0, boxYaw = -.35, boxBob = 0, rel = false;
-  const U = 72, RING_PX = 30;                                                   /* px per box unit, ring radius on screen */
+  const U = 72, RING_PX = 30;
   const E = {io:k => k<.5 ? 4*k*k*k : 1-Math.pow(-2*k+2,3)/2, out:k => 1-Math.pow(1-k,3), in:k => k*k*k};
   const tw = (d,f,e=E.io) => new Promise(res => { d = still ? 30 : d; const t0 = performance.now(); (function s(n){ const k = Math.min((n-t0)/d,1); f(e(k),k); k<1 ? requestAnimationFrame(s) : res(); })(t0); });
   const lerp = (a,b,k) => a+(b-a)*k;
-
 
   const M = {};
   function mats(){
@@ -551,7 +531,6 @@ const Ring = (() => {
     M.shirt  = S({color:0xf4f6fa, roughness:.85, envMapIntensity:.3});
     M.suit   = S({color:0x0b1630, roughness:.9, envMapIntensity:.25});
   }
-
   function mkEnv(){
     const c = document.createElement('canvas'); c.width = 1024; c.height = 512; const x = c.getContext('2d');
     const g = x.createLinearGradient(0,0,0,512); g.addColorStop(0,'#d6eaff'); g.addColorStop(.42,'#31558a'); g.addColorStop(.5,'#0c1a33'); g.addColorStop(1,'#03060d');
@@ -566,14 +545,12 @@ const Ring = (() => {
     x.fillStyle = 'rgba(255,255,255,.95)'; x.fillRect(h-1,6,2,s-12); x.fillRect(6,h-1,s-12,2); });
   const glowTex = () => sprite((x,s) => { const h = s/2, g = x.createRadialGradient(h,h,0,h,h,h); g.addColorStop(0,'rgba(125,211,252,.85)'); g.addColorStop(.4,'rgba(56,189,248,.28)'); g.addColorStop(1,'rgba(14,165,233,0)'); x.fillStyle = g; x.fillRect(0,0,s,s); },256);
 
-
-  function rrect(w,h,d,r,bv){                                                   /* silhouette in XY, thickness along Z, all sizes exact */
+  function rrect(w,h,d,r,bv){
     const a = w-2*bv, b = h-2*bv, q = Math.max(Math.min(r-bv,a/2-.001,b/2-.001),.001), x = -a/2, y = -b/2, s = new T.Shape();
     s.moveTo(x+q,y); s.lineTo(x+a-q,y); s.quadraticCurveTo(x+a,y,x+a,y+q); s.lineTo(x+a,y+b-q); s.quadraticCurveTo(x+a,y+b,x+a-q,y+b); s.lineTo(x+q,y+b); s.quadraticCurveTo(x,y+b,x,y+b-q); s.lineTo(x,y+q); s.quadraticCurveTo(x,y,x+q,y);
     const g = new T.ExtrudeGeometry(s,{depth:d-2*bv, bevelEnabled:true, bevelThickness:bv, bevelSize:bv, bevelSegments:5, curveSegments:10}); g.translate(0,0,-(d-2*bv)/2); return g; }
   function rbox(w,h,d,r){ const bv = Math.min(.035,h*.2,w*.2,d*.2), g = rrect(w,d,h,r,bv); g.rotateX(-Math.PI/2); return g; }
 
- 
   function mkRing(){
     const g = new T.Group(), n = new T.Group(); g.add(n);
     const band = new T.Mesh(new T.TorusGeometry(1,.13,28,96),M.metal); band.scale.z = 1.35; n.add(band);
@@ -586,7 +563,6 @@ const Ring = (() => {
     gl.position.set(0,1.42,.3); gl.scale.set(1.7,1.7,1); gl.renderOrder = 12; n.add(gl);
     return {g, glint:gl};
   }
-
   function mkBox(){
     const g = new T.Group(), t = new T.Group(); g.add(t);
     const add = (geo,mat,x,y,z,p) => { const m = new T.Mesh(geo,mat); m.position.set(x,y,z); (p||t).add(m); return m; };
@@ -597,7 +573,6 @@ const Ring = (() => {
     add(rbox(1.74,.05,1.44,.17),M.trim,0,.12,.7,lid); add(rbox(1.4,.03,1.1,.08),M.velIn,0,.785,.7,lid);
     return {g, t, lid};
   }
-  /* ---- the hand: tapered tubes for fingers, rounded slab for the palm ---- */
   function fingerR(r0,r1){ return t => r0+(r1-r0)*Math.pow(t,1.15)+.05*r0*(Math.exp(-Math.pow((t-.6)/.05,2))+Math.exp(-Math.pow((t-.8)/.05,2))); }
   function nail(sx,sy,x,y,z,rx,rz){ const n = new T.Mesh(new T.SphereGeometry(1,20,14),M.nail); n.scale.set(sx,sy,.14); n.position.set(x,y,z); n.rotation.set(rx||0,0,rz||0); return n; }
   function finger(x,len,r0,r1,splay){
@@ -616,7 +591,6 @@ const Ring = (() => {
     const defs = [[2.6,6.7,.88,.72,-.1],[.87,7.4,.92,.74,-.02],[-.88,6.8,.9,.72,.05],[-2.5,5.3,.74,.58,.16]], fs = defs.map(d => finger(...d));
     fs.forEach(f => h.add(f.g));
     defs.forEach(d => { const k = new T.Mesh(new T.SphereGeometry(.62,16,12),M.skin); k.scale.set(1,.8,.5); k.position.set(d[0],.1,1.3); h.add(k); });
-    /* thumb */
     const curve = new T.CatmullRomCurve3([[3,-5.6,.2],[4.4,-4.4,.5],[5.7,-2.9,.9],[6.5,-1,1]].map(a => new T.Vector3(...a))), tg = new T.TubeGeometry(curve,28,1,20,false), tp = tg.attributes.position, seg = 28, rb = 20+1;
     for (let i = 0; i < tp.count; i++){ const s = Math.floor(i/rb), t = s/seg, c = curve.getPointAt(t), r = 1.05-.27*Math.pow(t,.9);
       tp.setXYZ(i,c.x+(tp.getX(i)-c.x)*r, c.y+(tp.getY(i)-c.y)*r, c.z+(tp.getZ(i)-c.z)*r); }
@@ -625,7 +599,6 @@ const Ring = (() => {
     const th = new T.Mesh(new T.SphereGeometry(1,24,18),M.skin); th.scale.set(1.9,2.9,1.2); th.position.set(3.1,-5,.1); th.rotation.z = -.55; h.add(th);
     return {g, h, ringF:fs[2]};
   }
-
 
   function size(){ if (!R) return; W = innerWidth; H = innerHeight; R.setPixelRatio(Math.min(devicePixelRatio||1,2)); R.setSize(W,H);
     cam.aspect = W/H; cam.position.z = (H/2)/Math.tan(T.MathUtils.degToRad(cam.fov/2)); cam.far = cam.position.z*4; cam.updateProjectionMatrix(); }
@@ -640,7 +613,7 @@ const Ring = (() => {
     const fill = new T.DirectionalLight(0xffe9d6,.5); fill.position.set(-400,-200,400); scene.add(fill);
     glow = new T.Mesh(new T.PlaneGeometry(1,1),new T.MeshBasicMaterial({map:glowTex(), transparent:true, blending:T.AdditiveBlending, depthWrite:false, depthTest:false, opacity:0})); glow.renderOrder = -1; scene.add(glow);
     ring = mkRing(); box = mkBox(); hand = mkHand();
-    const rs = .26; ring.g.scale.setScalar(rs); ring.g.position.set(0,.45+.08-.06+1.13*rs-.0,0); box.t.add(ring.g);   /* ring sits in the cushion */
+    const rs = .26; ring.g.scale.setScalar(rs); ring.g.position.set(0,.45+.08-.06+1.13*rs-.0,0); box.t.add(ring.g);
     scene.add(box.g); hand.g.visible = false; scene.add(hand.g); box.g.scale.setScalar(.001);
     return true;
   }
@@ -660,7 +633,6 @@ const Ring = (() => {
     R.render(scene,cam);
   }
 
-
   async function begin(){
     if (!init()){ api.begin = plain; return plain(); }
     state = 'appear'; live = true; last = performance.now(); cv.classList.add('on'); requestAnimationFrame(frame);
@@ -673,7 +645,6 @@ const Ring = (() => {
   cv.addEventListener('click', e => { if (state === 'wait' && near(e)) open(); });
   hint.addEventListener('click', () => open());
 
- 
   async function open(){
     if (state !== 'wait') return; state = 'busy'; hint.classList.remove('show'); cv.classList.remove('hit'); Snd.latch();
     await tw(1500,(e) => { box.lid.rotation.x = -1.95*e; box.t.rotation.x = lerp(.55,.62,e); boxYaw = lerp(-.35,-.15,e); glowAmt = lerp(.55,.9,e); },E.io);
@@ -686,7 +657,6 @@ const Ring = (() => {
     await sink; box.g.visible = false; state = 'hover'; showQ();
   }
 
-
   async function wear(){
     if (state !== 'hover') return; state = 'wear'; $('#s4').classList.add('wear'); Snd.swoosh(1.8);
     const k = Math.min(H/30,W/14,34), f = hand.ringF, tR = 4.6/f.L, rs = (f.rf(tR)+.035)/.87, hy = .04*H-2.27*k, hx = .88*k;
@@ -696,11 +666,10 @@ const Ring = (() => {
     const qT = fq.multiply(new T.Quaternion().setFromEuler(new T.Euler(Math.PI/2,0,0))); setHand(0);
     const p0 = ring.g.position.clone(), q0 = ring.g.quaternion.clone(), s0 = ring.g.scale.x, s1 = k*rs;
     state = 'wear-a';
-    await tw(1900,(e) => { setHand(e); ring.g.position.lerpVectors(p0,target,e); ring.g.quaternion.copy(q0).slerp(qT,e); ring.g.scale.setScalar(lerp(s0,s1,e)); glow.position.set(ring.g.position.x,ring.g.position.y,-40); },E.io);
+    await tw(1900,(e) => { setHand(e); ring.g.position.lerpVectors(p0,target,e); ring.g.quaternion.copy(q0).slerp(q0,e); ring.g.scale.setScalar(lerp(s0,s1,e)); glow.position.set(ring.g.position.x,ring.g.position.y,-40); },E.io);
     f.g.attach(ring.g); ring.g.quaternion.setFromEuler(new T.Euler(Math.PI/2,0,0)); ring.g.scale.setScalar(rs); const y0 = ring.g.position.y; ring.g.position.set(0,y0,0);
     await sleep(350); Snd.slide();
     await tw(1900,(e) => { ring.g.position.set(0,lerp(y0,4.6,e),0); glow.position.set(toPx(ring.g).x-W/2,H/2-toPx(ring.g).y,-40); },E.io);
-    /* it is on: flash, sparkle, chime */
     Snd.chime(); Snd.shimmer(); const c = toPx(ring.g); glintAmt = 1.6;
     [0,220,440,660].forEach((d,i) => setTimeout(() => FX.small(c.x+(Math.random()-.5)*90,c.y+(Math.random()-.5)*70),d));
     tw(900,(e) => { glowAmt = lerp(.7,1.2,Math.sin(e*Math.PI)); });
@@ -727,7 +696,6 @@ const Ring = (() => {
   $('#code').focus();
 })();
 
-
 const Lib = (() => {
   const T = {audio:'Voice Notes and Recitations', video:'Special Memories', notes:'Love Notes and Timeline'}; let key = null, playing = null;
   const hit = (i,q) => (i.title+' '+(i.text||'')+' '+(i.when||'')+' '+i.tags.join(' ')).toLowerCase().includes(q);
@@ -746,7 +714,7 @@ const Lib = (() => {
     $('#dbody').innerHTML = h; }
   let busy = false, fromEl = null;
   const EASE = 'cubic-bezier(.22,.85,.25,1)';
-  function open(k, el){ if (busy) return; key = k; fromEl = el; $('#dtitle').textContent = T[k]; $('#search').value = ''; render();
+  function open(k, el){ if (busy) return; Snd.leaveForCard(); key = k; fromEl = el; $('#dtitle').textContent = T[k]; $('#search').value = ''; render();
     const d = $('#detail'), p = $('#panel'); [d,p].forEach(x => x.getAnimations().forEach(a => a.cancel()));
     d.style.display = 'block'; d.scrollTop = 0; Snd.pop();
     const r = el.getBoundingClientRect(), q = p.getBoundingClientRect();
@@ -757,22 +725,24 @@ const Lib = (() => {
   function close(){ if (busy || $('#detail').style.display !== 'block') return; busy = true; $$('video').forEach(v => v.pause());
     const d = $('#detail'), p = $('#panel'), r = fromEl.getBoundingClientRect(), q = p.getBoundingClientRect();
     p.animate([{transform:'none',opacity:1,filter:'blur(0)'},{opacity:0,offset:.7},{transform:`translate(${r.left-q.left}px,${r.top-q.top}px) scale(${r.width/q.width},${r.height/q.height})`,opacity:0,filter:'blur(10px)'}],{duration:1100,easing:'cubic-bezier(.5,0,.2,1)',fill:'forwards'});
-    d.animate([{opacity:1},{opacity:0}],{duration:1100,delay:200,easing:'ease',fill:'forwards'}).onfinish = () => { [d,p].forEach(x => x.getAnimations().forEach(a => a.cancel())); d.style.display = 'none'; busy = false; if (au.paused) $('#player').style.display = 'none'; }; }
-  $$('.col').forEach(c => c.addEventListener('click', () => open(c.dataset.k, c)));
-  $('#back').onclick = close; addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    d.animate([{opacity:1},{opacity:0}],{duration:1100,delay:200,easing:'ease',fill:'forwards'}).onfinish = () => { [d,p].forEach(x => x.getAnimations().forEach(a => a.cancel())); d.style.display = 'none'; busy = false; if (au.paused) $('#player').style.display = 'none'; Snd.returnToMenu(); }; } $$('.col').forEach(c => c.addEventListener('click', () => open(c.dataset.k, c)));$('#back').onclick = close; addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
   $('#search').addEventListener('input', render);
-  function pick(el){ const i = DATA.audio.find(x => x.file === el.dataset.f); if (!i) return; playing = i.file; au.src = i.file; au.playbackRate = +$('#speed').value;
+  function pick(el){ Snd.stopBg(); const i = DATA.audio.find(x => x.file === el.dataset.f); if (!i) return; playing = i.file; au.src = i.file; au.playbackRate = +$('#speed').value;
     $('#pTitle').textContent = i.title; $('#pSub').textContent = i.tags.join(', '); au.play().catch(() => {}); render(); }
   $('#dbody').addEventListener('click', e => { const el = e.target.closest('.track'); if (el) pick(el); });
   $('#dbody').addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' '){ const el = e.target.closest('.track'); if (el){ e.preventDefault(); pick(el); } } });
-  $('#dbody').addEventListener('play', e => { if (e.target.tagName === 'VIDEO'){ au.pause(); $$('video').forEach(v => { if (v !== e.target) v.pause(); }); } }, true);
-  $('#dbody').addEventListener('error', e => { const w = e.target.closest && e.target.closest('.vwrap'); if (w) w.classList.add('bad'); }, true);
+  $('#dbody').addEventListener('play', e => { if (e.target.tagName === 'VIDEO'){ Snd.stopBg(); au.pause(); $$('video').forEach(v => { if (v !== e.target) v.pause(); }); } }, true);$('#dbody').addEventListener('error', e => { const w = e.target.closest && e.target.closest('.vwrap'); if (w) w.classList.add('bad'); }, true);
 })();
 
 
+let uiSoundRestoreTimer = null;
+document.addEventListener('pointerover', e => { if (e.target.closest('button,.track,.col')) Snd.duckBg(); });
+document.addEventListener('pointerout', e => { if (e.target.closest('button,.track,.col')) { clearTimeout(uiSoundRestoreTimer); uiSoundRestoreTimer=setTimeout(()=>Snd.restoreBg(),220); } });
+document.addEventListener('click', e => { if (e.target.closest('button,.track,.col')) { Snd.duckBg(); clearTimeout(uiSoundRestoreTimer); uiSoundRestoreTimer=setTimeout(()=>Snd.restoreBg(),850); } }, true);
+
 const au = $('#audio'); let seeking = false;
-$('#pp').onclick = () => { if (!au.src){ const f = $('.track'); if (f) f.click(); return; } au.paused ? au.play() : au.pause(); };
-au.addEventListener('play', () => { $('#iPlay').style.display='none'; $('#iPause').style.display='block'; $$('video').forEach(v => v.pause()); });
+$('#pp').onclick = () => { Snd.stopBg(); if (!au.src){ const f = $('.track'); if (f) f.click(); return; } au.paused ? au.play() : au.pause(); };
+au.addEventListener('play', () => { Snd.stopBg(); $('#iPlay').style.display='none'; $('#iPause').style.display='block'; $$('video').forEach(v => v.pause()); });
 au.addEventListener('pause', () => { $('#iPlay').style.display='block'; $('#iPause').style.display='none'; });
 au.addEventListener('loadedmetadata', () => $('#dur').textContent = fmt(au.duration));
 au.addEventListener('timeupdate', () => { $('#cur').textContent = fmt(au.currentTime); if (!seeking && au.duration) $('#seek').value = au.currentTime/au.duration*1000; });
